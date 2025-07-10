@@ -9,7 +9,9 @@
   <body>
     <header>
       <div class="container">
-        <div class="logo">Cardano <span>Builder DAO</span></div>
+        <div class="logo">
+          <img src="images/cbdaoLogo.svg" alt="Cardano Builder DAO Logo" class="logo-image">
+        </div>
       </div>
     </header>
 
@@ -301,7 +303,9 @@
 
     <footer>
       <div class="container">
-        <div class="logo">Cardano <span>Builder DAO</span></div>
+        <div class="logo">
+          <img src="images/cbdaoLogo.svg" alt="Cardano Builder DAO Logo" class="logo-image">
+        </div>
         <div class="footer-links">
           <a
             href="https://www.clarity.vote/organizations/CardanoBuilderDAO"
@@ -336,6 +340,54 @@
 
       sections.forEach((section) => {
         observer.observe(section);
+      });
+
+      // Reactive navbar script
+      document.addEventListener('DOMContentLoaded', function() {
+        const header = document.querySelector('header');
+        let lastScrollY = 0;
+        let ticking = false;
+        let scrollTimeout;
+
+        // Show header on first load
+        setTimeout(() => {
+          header.classList.add('visible');
+        }, 300);
+
+        window.addEventListener('scroll', function() {
+          const scrollY = window.scrollY;
+          
+          if (!ticking) {
+            window.requestAnimationFrame(function() {
+              // Show header when scrolling up, hide when scrolling down
+              if (scrollY > lastScrollY && scrollY > 100) {
+                // Scrolling down
+                header.classList.remove('visible');
+                header.classList.add('hidden');
+              } else if (scrollY < lastScrollY || scrollY < 100) {
+                // Scrolling up or near the top
+                header.classList.remove('hidden');
+                header.classList.add('visible');
+              }
+              
+              lastScrollY = scrollY;
+              ticking = false;
+              
+              // Clear previous timeout
+              clearTimeout(scrollTimeout);
+              
+              // Hide header after 2 seconds of no scrolling, unless at the top
+              if (scrollY > 100) {
+                scrollTimeout = setTimeout(function() {
+                  header.classList.remove('visible');
+                  header.classList.add('hidden');
+                }, 2000);
+              }
+            });
+            
+            ticking = true;
+          }
+        });
       });
     </script>
     <script src="carousel.js"></script>
