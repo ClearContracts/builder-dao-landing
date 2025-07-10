@@ -7,6 +7,12 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <!-- Loading Screen -->
+    <div id="loading-overlay">
+      <div class="loading-logo">
+        <img src="images/cbdaoLogo.svg" alt="Cardano Builder DAO Logo">
+      </div>
+    </div>
     <header>
       <div class="container">
         <div class="logo">
@@ -45,16 +51,19 @@
       </div>
     </div>
 
-    <div class="container">
-      <!-- Project Logos Carousel -->
-      <section id="projects" class="projects-section">
+    <!-- Project Logos Carousel - Full Width -->
+    <section id="projects" class="projects-section full-width-section">
+      <div class="container">
         <h2 class="section-title">Our <span>Members</span></h2>
-        <div class="logo-carousel-container">
-          <div class="logo-carousel" id="carousel-row-1"></div>
-          <div class="logo-carousel reverse" id="carousel-row-2"></div>
-          <div class="logo-carousel" id="carousel-row-3"></div>
-        </div>
-      </section>
+      </div>
+      <div class="logo-carousel-container">
+        <div class="logo-carousel" id="carousel-row-1"></div>
+        <div class="logo-carousel reverse" id="carousel-row-2"></div>
+        <div class="logo-carousel" id="carousel-row-3"></div>
+      </div>
+    </section>
+    
+    <div class="container">
 
       <section id="mission" class="mission-section">
         <h2 class="section-title">Our <span>Mission</span> & Scope</h2>
@@ -325,6 +334,18 @@
     </footer>
 
     <script>
+      // Loading overlay handling
+      document.addEventListener('DOMContentLoaded', function() {
+        const loadingOverlay = document.getElementById('loading-overlay');
+        
+        // Hide loading overlay when window is fully loaded
+        window.addEventListener('load', function() {
+          setTimeout(() => {
+            loadingOverlay.classList.add('hidden');
+          }, 500); // Small delay for smoother transition
+        });
+      });
+      
       // Intersection Observer for animation on scroll
       const sections = document.querySelectorAll("section");
       const observer = new IntersectionObserver(
