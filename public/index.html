@@ -44,7 +44,15 @@
     </div>
 
     <div class="container">
-      <!-- Logos -->
+      <!-- Project Logos Carousel -->
+      <section id="projects" class="projects-section">
+        <h2 class="section-title">Our <span>Members</span></h2>
+        <div class="logo-carousel-container">
+          <div class="logo-carousel" id="carousel-row-1"></div>
+          <div class="logo-carousel reverse" id="carousel-row-2"></div>
+          <div class="logo-carousel" id="carousel-row-3"></div>
+        </div>
+      </section>
 
       <section id="mission" class="mission-section">
         <h2 class="section-title">Our <span>Mission</span> & Scope</h2>
@@ -313,27 +321,23 @@
     </footer>
 
     <script>
-      // Intersection Observer for scroll animations
-      const sections = document.querySelectorAll("section:not(.hero)");
-
-      const observerOptions = {
-        root: null,
-        rootMargin: "0px",
-        threshold: 0.1,
-      };
-
-      const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("active");
-            observer.unobserve(entry.target);
-          }
-        });
-      }, observerOptions);
+      // Intersection Observer for animation on scroll
+      const sections = document.querySelectorAll("section");
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("active");
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
 
       sections.forEach((section) => {
         observer.observe(section);
       });
     </script>
+    <script src="carousel.js"></script>
   </body>
 </html>

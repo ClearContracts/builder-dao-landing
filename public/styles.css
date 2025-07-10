@@ -351,6 +351,113 @@ footer {
   gap: 20px;
 }
 
+/* Logo Carousel Styles */
+.projects-section {
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  position: relative;
+  margin-top: 80px;
+}
+
+.logo-carousel-container {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  overflow: hidden;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.logo-carousel {
+  display: flex;
+  animation: scroll 45s linear infinite;
+  width: max-content;
+  gap: 15px;
+  padding: 0;
+}
+
+.logo-carousel + .logo-carousel {
+  margin-top: 0;
+}
+
+.logo-carousel.reverse {
+  animation: scroll-reverse 45s linear infinite;
+}
+
+.logo-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.logo-item:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 15px rgba(255, 0, 255, 0.8));
+  z-index: 10;
+}
+
+/* Custom Tooltip Styling */
+.custom-tooltip {
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.85);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  pointer-events: none;
+  z-index: 100;
+}
+
+.custom-tooltip.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.logo-item img {
+  height: 120px;
+  width: 180px;
+  object-fit: contain;
+}
+
+.logo-carousel:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scroll-reverse {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
 @media (max-width: 768px) {
   .hero h1 {
     font-size: 36px;
@@ -389,5 +496,9 @@ footer {
 
   .timeline-item:nth-child(even)::after {
     left: 21px;
+  }
+
+  .logo-item img {
+    height: 50px;
   }
 }
