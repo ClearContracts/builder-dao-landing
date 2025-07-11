@@ -3,7 +3,7 @@ const projectsConfig = [
   {
     name: "Anvil",
     logo: "images/projectLogos/anvil.png",
-    url: "https://anvil.works/",
+    url: "https://ada-anvil.io/",
   },
   {
     name: "Begin",
@@ -13,7 +13,7 @@ const projectsConfig = [
   {
     name: "Clarity",
     logo: "images/projectLogos/clarity.png",
-    url: "https://www.clarity.vote/",
+    url: "https://www.clarity.community/",
   },
   {
     name: "DexHunter",
@@ -26,9 +26,9 @@ const projectsConfig = [
     url: "https://fluidtokens.com/",
   },
   {
-    name: "Flux Point",
+    name: "Flux Point Studios",
     logo: "images/projectLogos/flux-point.png",
-    url: "https://fluxpoint.io/",
+    url: "https://fluxpointstudios.com/",
   },
   {
     name: "Gero",
@@ -48,22 +48,22 @@ const projectsConfig = [
   {
     name: "Ikigai",
     logo: "images/projectLogos/ikigai.png",
-    url: "https://ikigaitoken.io/",
+    url: "https://ikigaitech.org/",
   },
   {
     name: "Indigo",
     logo: "images/projectLogos/indigo.png",
-    url: "https://indigoprotocol.io/",
+    url: "https://indigo-labs.io/",
   },
   {
-    name: "Mayz",
+    name: "MAYZ",
     logo: "images/projectLogos/mayz.png",
     url: "https://mayz.io/",
   },
   {
     name: "Metera",
     logo: "images/projectLogos/metera.png",
-    url: "https://metera.io/",
+    url: "https://meteraprotocol.io/",
   },
   {
     name: "Minswap",
@@ -78,17 +78,17 @@ const projectsConfig = [
   {
     name: "Snek",
     logo: "images/projectLogos/snek.png",
-    url: "https://www.snek.fi/",
+    url: "https://snek.com/",
   },
   {
     name: "SundaeSwap",
     logo: "images/projectLogos/sundae.png",
-    url: "https://sundaeswap.finance/",
+    url: "https://sundae.fi",
   },
   {
     name: "Tapdano",
     logo: "images/projectLogos/tapdano.png",
-    url: "https://www.tapdano.com/",
+    url: "https://cardanowarriors.io/",
   },
   {
     name: "TapTools",
@@ -98,7 +98,7 @@ const projectsConfig = [
   {
     name: "Tokeo",
     logo: "images/projectLogos/tokeo.png",
-    url: "https://tokeo.io/",
+    url: "https://tokeopay.io/",
   },
   {
     name: "Vespr",
@@ -108,7 +108,7 @@ const projectsConfig = [
   {
     name: "Wanchain",
     logo: "images/projectLogos/wanchain.png",
-    url: "https://www.wanchain.org/",
+    url: "https://wanchain.org/",
   },
   {
     name: "Xerberus",
@@ -118,7 +118,7 @@ const projectsConfig = [
   {
     name: "XRay",
     logo: "images/projectLogos/xray.png",
-    url: "https://www.xray.fans/",
+    url: "https://xray.app/wiki/",
   },
 ];
 
@@ -130,12 +130,12 @@ function createLogoItem(project) {
   const img = document.createElement("img");
   img.src = project.logo;
   img.alt = `${project.name} logo`;
-  
+
   // Create custom tooltip
   const tooltip = document.createElement("div");
   tooltip.className = "custom-tooltip";
   tooltip.textContent = project.name;
-  
+
   logoItem.appendChild(img);
   logoItem.appendChild(tooltip);
 
@@ -143,7 +143,7 @@ function createLogoItem(project) {
   logoItem.addEventListener("mouseenter", () => {
     tooltip.classList.add("active");
   });
-  
+
   logoItem.addEventListener("mouseleave", () => {
     tooltip.classList.remove("active");
   });
