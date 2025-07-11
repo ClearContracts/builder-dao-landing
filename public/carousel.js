@@ -123,7 +123,7 @@ const projectsConfig = [
 ];
 
 // Function to create logo items
-function createLogoItem(project) {
+function createLogoItem(project, tooltipAbove = false) {
   const logoItem = document.createElement("div");
   logoItem.className = "logo-item";
 
@@ -134,6 +134,9 @@ function createLogoItem(project) {
   // Create custom tooltip
   const tooltip = document.createElement("div");
   tooltip.className = "custom-tooltip";
+  if (tooltipAbove) {
+    tooltip.classList.add("tooltip-above");
+  }
   tooltip.textContent = project.name;
 
   logoItem.appendChild(img);
@@ -157,18 +160,18 @@ function createLogoItem(project) {
 }
 
 // Function to populate a carousel row
-function populateCarousel(carouselId, projects, duplicateForScroll = true) {
+function populateCarousel(carouselId, projects, duplicateForScroll = true, tooltipAbove = false) {
   const carousel = document.getElementById(carouselId);
 
   // Add project logos
   projects.forEach((project) => {
-    carousel.appendChild(createLogoItem(project));
+    carousel.appendChild(createLogoItem(project, tooltipAbove));
   });
 
   // Duplicate items to create seamless scrolling effect
   if (duplicateForScroll) {
     projects.forEach((project) => {
-      const duplicatedItem = createLogoItem(project);
+      const duplicatedItem = createLogoItem(project, tooltipAbove);
       carousel.appendChild(duplicatedItem);
     });
   }
@@ -198,6 +201,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const group2 = shuffledProjects.slice(groupSize, groupSize * 2);
   const group3 = shuffledProjects.slice(groupSize * 2);
 
+  // Populate carousels
+  populateCarousel("carousel-row-1", group1);
+  populateCarousel("carousel-row-2", group2);
+  populateCarousel("carousel-row-3", group3, true, true); // tooltipAbove for bottom row
   // Populate the three rows, each with a distinct set of logos
   populateCarousel("carousel-row-1", group1);
   populateCarousel("carousel-row-2", group2);

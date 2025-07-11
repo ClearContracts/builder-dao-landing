@@ -630,6 +630,12 @@ footer {
   z-index: 100;
 }
 
+/* Tooltip above the logo */
+.custom-tooltip.tooltip-above {
+  bottom: auto;
+  top: -30px;
+}
+
 .custom-tooltip.active {
   opacity: 1;
   visibility: visible;
