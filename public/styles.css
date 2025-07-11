@@ -65,12 +65,20 @@ body {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  position: relative;
-  min-height: 100vh;
-  overflow-x: hidden;
-  padding-top: 90px; /* Add padding to account for fixed header */
-  font-weight: 300;
-  letter-spacing: 0.02em;
+}
+
+@media (max-width: 900px) {
+  .background, body, html {
+    background-attachment: scroll !important;
+  }
+  body {
+    position: relative;
+    min-height: 100vh;
+    overflow-x: hidden;
+    padding-top: 90px; /* Add padding to account for fixed header */
+    font-weight: 300;
+    letter-spacing: 0.02em;
+  }
 }
 
 /* Dark overlay for background */
@@ -595,6 +603,8 @@ footer {
 }
 
 .logo-item {
+  will-change: transform;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -666,6 +676,41 @@ footer {
   }
   100% {
     transform: translateX(0);
+  }
+}
+
+/* Responsive adjustments for logo carousel on mobile */
+@media (max-width: 600px) {
+  /* Remove backdrop-filter and reduce drop-shadow on mobile */
+  .glass, .glass-card, .glass-section, .glass-header, .glass-footer, .glass-modal, .glass-nav {
+    backdrop-filter: none !important;
+    background-color: rgba(30, 30, 40, 0.98) !important;
+  }
+  .logo-item img {
+    filter: drop-shadow(0 0 6px rgba(255, 0, 255, 0.5));
+  }
+  .logo-carousel {
+    gap: 4px;
+    padding: 0 10vw;
+    animation-duration: 90s !important; /* slower on mobile */
+  }
+  .logo-carousel.reverse {
+    animation-duration: 90s !important;
+  }
+  .logo-item img {
+    height: 64px;
+    width: 96px;
+  }
+}
+
+@media (max-width: 400px) {
+  .logo-carousel {
+    gap: 12px;
+    padding: 0 4vw;
+  }
+  .logo-item img {
+    height: 48px;
+    width: 72px;
   }
 }
 
