@@ -88,7 +88,7 @@ const projectsConfig = [
   {
     name: "Tapdano",
     logo: "images/projectLogos/tapdano.png",
-    url: "https://cardanowarriors.io/",
+    url: "https://tapdano.com/",
   },
   {
     name: "TapTools",
@@ -160,7 +160,12 @@ function createLogoItem(project, tooltipAbove = false) {
 }
 
 // Function to populate a carousel row
-function populateCarousel(carouselId, projects, duplicateForScroll = true, tooltipAbove = false) {
+function populateCarousel(
+  carouselId,
+  projects,
+  duplicateForScroll = true,
+  tooltipAbove = false
+) {
   const carousel = document.getElementById(carouselId);
 
   // Add project logos
