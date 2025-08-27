@@ -61,7 +61,7 @@ body {
   font-family: "Outfit", sans-serif;
   color: var(--text-primary);
   background-color: var(--bg-primary);
-  background-image: url("images/bg.png");
+  background-image: url("images/bg.webp");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
