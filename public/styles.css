@@ -60,11 +60,36 @@
 body {
   font-family: "Outfit", sans-serif;
   color: var(--text-primary);
-  background-color: var(--bg-primary);
+  background-color: var(--bg-primary, #000000);
   background-image: url("images/bg.webp");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 900px) {
+  .background,
+  body,
+  html {
+    background-attachment: scroll !important;
+  }
+  body {
+    position: relative;
+    min-height: 100vh;
+    overflow-x: hidden;
+    padding-top: 90px; /* Add padding to account for fixed header */
+    font-weight: 300;
+    letter-spacing: 0.02em;
+  }
+}
+
+/* Force scroll background on touch devices (iOS/Chrome on iPhone) */
+@media (pointer: coarse), (hover: none) {
+  html,
+  body {
+    background-attachment: scroll !important;
+  }
 }
 
 @media (max-width: 900px) {
@@ -487,8 +512,9 @@ section.active {
   left: -14px; /* Adjusted to match the right side */
 }
 
-/* Add checkmark to the first timeline item */
-.timeline-item:first-child::after {
+/* Add checkmark to the first 2 timeline items */
+.timeline-item:nth-child(1)::after,
+.timeline-item:nth-child(2)::after {
   content: "✓";
   display: flex;
   align-items: center;
