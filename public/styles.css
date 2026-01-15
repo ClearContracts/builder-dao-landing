@@ -512,9 +512,10 @@ section.active {
   left: -14px; /* Adjusted to match the right side */
 }
 
-/* Add checkmark to the first 2 timeline items */
+/* Add checkmark to the first 3 timeline items */
 .timeline-item:nth-child(1)::after,
-.timeline-item:nth-child(2)::after {
+.timeline-item:nth-child(2)::after,
+.timeline-item:nth-child(3)::after {
   content: "✓";
   display: flex;
   align-items: center;
