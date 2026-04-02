@@ -106,11 +106,6 @@ const projectsConfig = [
     url: "https://vespr.xyz/",
   },
   {
-    name: "Wanchain",
-    logo: "images/projectLogos/wanchain.webp",
-    url: "https://wanchain.org/",
-  },
-  {
     name: "Xerberus",
     logo: "images/projectLogos/xerberus.webp",
     url: "https://xerberus.io/",
@@ -119,6 +114,121 @@ const projectsConfig = [
     name: "XRay",
     logo: "images/projectLogos/xray.webp",
     url: "https://xray.app/wiki/",
+  },
+  {
+    name: "Andamio",
+    logo: "images/projectLogos/andamio.webp",
+    url: "https://www.andamio.io/",
+  },
+  {
+    name: "UTXOS Dev",
+    logo: "images/projectLogos/utxos-dev.webp",
+    url: "https://utxos.dev/",
+  },
+  {
+    name: "Cexplorer",
+    logo: "images/projectLogos/cexplorer.webp",
+    url: "https://cexplorer.io/",
+  },
+  {
+    name: "JamonBread",
+    logo: "images/projectLogos/jamonbread.webp",
+    url: "https://jamonbread.io/",
+  },
+  {
+    name: "DeltaDeFi",
+    logo: "images/projectLogos/delta-defi.webp",
+    url: "https://www.deltadefi.io/",
+  },
+  {
+    name: "WingRiders",
+    logo: "images/projectLogos/wingriders.webp",
+    url: "https://www.wingriders.com/",
+  },
+  {
+    name: "Dano Foundation",
+    logo: "images/projectLogos/danogo.webp",
+    url: "https://app.danogo.io/",
+  },
+  {
+    name: "AdaLink",
+    logo: "images/projectLogos/adalink.webp",
+    url: "https://adalink.io/",
+  },
+  {
+    name: "CSwap",
+    logo: "images/projectLogos/cswap.webp",
+    url: "https://cswap.trade/",
+  },
+  {
+    name: "Charli3",
+    logo: "images/projectLogos/c3.webp",
+    url: "https://charli3.io/",
+  },
+  {
+    name: "L4VA",
+    logo: "images/projectLogos/l4va.webp",
+    url: "https://l4va.com/",
+  },
+  {
+    name: "Liqwid",
+    logo: "images/projectLogos/liqwid.webp",
+    url: "https://v2.liqwid.finance/",
+  },
+  {
+    name: "Banker Labs",
+    logo: "images/projectLogos/bankfi.webp",
+    url: "https://bankerlabs.io/",
+  },
+  {
+    name: "Masumi",
+    logo: "images/projectLogos/masumi.webp",
+    url: "https://www.masumi.network/",
+  },
+  {
+    name: "Nuvola Digital",
+    logo: "images/projectLogos/vola.webp",
+    url: "https://vola.network/",
+  },
+  {
+    name: "Walkers",
+    logo: "images/projectLogos/walkers.webp",
+    url: "https://walkerscardano.xyz/",
+  },
+  {
+    name: "W3i",
+    logo: "images/projectLogos/w3i.webp",
+    url: "https://w3i.global/",
+  },
+  {
+    name: "MLabs",
+    logo: "images/projectLogos/mlabs.webp",
+    url: "https://www.mlabs.city/",
+  },
+  {
+    name: "UTxO Company",
+    logo: "images/projectLogos/utxos-company.webp",
+    url: "https://www.utxo.company/",
+  },
+  {
+    name: "Atrium",
+    logo: "images/projectLogos/atrium.webp",
+    url: "https://atriumlab.io/",
+  },
+  {
+    name: "Bodega",
+    logo: "images/projectLogos/bodega.webp",
+    url: "https://linktr.ee/bodegacardano",
+  },
+  {
+    name: "Strike Finance",
+    logo: "images/projectLogos/strike.webp",
+    url: "https://app.strikefinance.org/",
+  },
+  {
+    name: "Coopertiva Local",
+    logo: "images/projectLogos/coopertiva-local.webp",
+    url: "https://cooperativalocal.org/en/",
   },
 ];
 
@@ -164,7 +274,7 @@ function populateCarousel(
   carouselId,
   projects,
   duplicateForScroll = true,
-  tooltipAbove = false
+  tooltipAbove = false,
 ) {
   const carousel = document.getElementById(carouselId);
 
